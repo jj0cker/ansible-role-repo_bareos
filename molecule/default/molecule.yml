@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: centos7
+    image: geerlingguy/docker-centos7-ansible:latest
+    #image: molecule_local/centos:
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    #  - /sys/fs/selinux:/sys/fs/selinux:ro
+    #pre_build_image: true
+    privileged: true
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  log: True
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
