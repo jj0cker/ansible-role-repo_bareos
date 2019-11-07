@@ -1,2 +1,12 @@
 ---
 # tasks file for j0cker.bareos_repo
+- name: Add official bareos repo (from bareos.org)
+  yum_repository:
+    name: bareos_bareos-{{ bareos_repo_version }}
+    description: bareos:bareos-{{ bareos_repo_version }} ({{ ansible_distribution }}_{{ ansible_distribution_major_version }})
+    baseurl: http://download.bareos.org/bareos/release/{{ bareos_repo_version }}/{{ ansible_distribution }}_$releasever/
+    enabled: "{{ bareos_repo_enabled }}"
+    gpgkey: http://download.bareos.org/bareos/release/{{ bareos_repo_version }}/{{ ansible_distribution }}_$releasever/repodata/repomod.xml.key
+    gpgcheck: "{{ bareos_repo_gpgcheck }}"
+    file: bareos
+    state: present
