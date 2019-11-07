@@ -15,6 +15,12 @@ platforms:
     #  - /sys/fs/selinux:/sys/fs/selinux:ro
     #pre_build_image: true
     privileged: true
+  - name: centos6
+    image: geerlingguy/docker-centos6-ansible:latest
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
 provisioner:
   name: ansible
   lint:
