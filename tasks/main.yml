@@ -1,5 +1,4 @@
 ---
-# tasks file for j0cker.bareos_repo
 - name: Add official bareos repo (from bareos.org)
   yum_repository:
     name: bareos_bareos-{{ bareos_repo_version }}
