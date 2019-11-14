@@ -1,8 +1,12 @@
 ---
+- name: Include variables for RedHat family
+  include_vars: "{{ ansible_distribution }}.yml"
+  when: ansible_os_family == "RedHat"
+
 - name: Include tasks for Debian family
   import_tasks: repo_debian.yml
   when: ansible_distribution == "Debian" 
 
 - name: Include tasks for RHEL family
-  import_tasks: repo_centos.yml
-  when: ansible_distribution == "CentOS" 
+  import_tasks: repo_redhat.yml
+  when: ansible_os_family == "RedHat" 
