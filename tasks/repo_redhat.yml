@@ -1,11 +1,11 @@
 ---
 - name: Add official bareos repo (from bareos.org)
   yum_repository:
-    name: bareos_bareos-{{ bareos_repo_version }}
-    description: bareos:bareos-{{ bareos_repo_version }} ({{ ansible_distribution }}_{{ ansible_distribution_major_version }})
-    baseurl: http://download.bareos.org/bareos/release/{{ bareos_repo_version }}/{{ repo_bareos_ansible_distribution }}_{{ ansible_distribution_major_version }}/
-    enabled: "{{ bareos_repo_enabled }}"
-    gpgkey: http://download.bareos.org/bareos/release/{{ bareos_repo_version }}/{{ repo_bareos_ansible_distribution }}_{{ ansible_distribution_major_version }}/repodata/repomod.xml.key
-    gpgcheck: "{{ bareos_repo_gpgcheck }}"
+    name: bareos_bareos-{{ repo_bareos_version }}
+    description: bareos:bareos-{{ repo_bareos_version }} ({{ ansible_distribution }}_{{ ansible_distribution_major_version }})
+    baseurl: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ repo_bareos_ansible_distribution }}_{{ ansible_distribution_major_version }}/
+    enabled: "{{ repo_bareos_enabled }}"
+    gpgkey: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ repo_bareos_ansible_distribution }}_{{ ansible_distribution_major_version }}/repodata/repomod.xml.key
+    gpgcheck: "{{ repo_bareos_gpgcheck }}"
     file: bareos
     state: present

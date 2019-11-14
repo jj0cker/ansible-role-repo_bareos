@@ -1,4 +1,4 @@
 ---
-bareos_repo_version: 18.2
-bareos_repo_enabled: True
-bareos_repo_gpgcheck: True
+repo_bareos_version: 18.2
+repo_bareos_enabled: True
+repo_bareos_gpgcheck: True
