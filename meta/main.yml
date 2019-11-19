@@ -1,10 +1,12 @@
 ---
 galaxy_info:
+  role_name: jj0cker.repo_bareos
   author: jj0cker
   description: Bareos repository.
-  license: license (GPLv2, CC-BY, etc)
+  license: "license (BSD, MIT)"
   # check this
   min_ansible_version: 2.4
+
   platforms:
     - name: EL
       versions:
@@ -14,6 +16,7 @@ galaxy_info:
       version:
         - jessie
         - stretch
+
   galaxy_tags:
     - bareos
     - repository
