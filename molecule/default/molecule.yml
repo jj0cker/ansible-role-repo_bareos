@@ -6,30 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: centos7
-    image: geerlingguy/docker-centos7-ansible:latest
-    #image: molecule_local/centos:
-    command: ""
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    #  - /sys/fs/selinux:/sys/fs/selinux:ro
-    #pre_build_image: true
-    privileged: true
-  - name: centos6
-    image: geerlingguy/docker-centos6-ansible:latest
-    command: ""
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-  - name: debian9
-    image: "mylocal-debian9-ansible"
-    command: ""
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
-  - name: rhel7
-    image: "jj0cker/docker-ubi7-ansible:latest"
+  - name: instance
+    image: "jj0cker/docker-${MOLECULE_DISTRIBUTION:-centos7}-ansible:latest"
     command: ""
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
