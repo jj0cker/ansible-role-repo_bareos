@@ -1,11 +1,11 @@
 ---
 # This is for installing missing python-apt lib's
-- name: apt-get update  
+- name: apt-get update
   apt:
-    update_cache: True
+    update_cache: true
 
 - name: Add apt key for bareos repository
-  apt_key: 
+  apt_key:
     url: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.0/Release.key
     state: present
 

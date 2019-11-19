@@ -5,8 +5,8 @@
 
 - name: Include tasks for Debian family
   import_tasks: repo_debian.yml
-  when: ansible_distribution == "Debian" 
+  when: ansible_distribution == "Debian"
 
 - name: Include tasks for RHEL family
   import_tasks: repo_redhat.yml
-  when: ansible_os_family == "RedHat" 
+  when: ansible_os_family == "RedHat"
