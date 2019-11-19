@@ -5,7 +5,7 @@
     description: bareos:bareos-{{ repo_bareos_version }} ({{ ansible_distribution }}_{{ ansible_distribution_major_version }})
     baseurl: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ repo_bareos_ansible_distribution }}_{{ ansible_distribution_major_version }}/
     enabled: "{{ repo_bareos_enabled }}"
-    gpgkey: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ repo_bareos_ansible_distribution }}_{{ ansible_distribution_major_version }}/repodata/repomod.xml.key
+    gpgkey: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ repo_bareos_ansible_distribution }}_{{ ansible_distribution_major_version }}/repodata/repomd.xml.key
     gpgcheck: "{{ repo_bareos_gpgcheck }}"
     file: bareos
     state: present
