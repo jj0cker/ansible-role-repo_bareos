@@ -8,7 +8,7 @@
 
 - name: Set variable repo_bareos_release
   set_fact:
-    repo_bareos_release: "{{ _repo_bareos_release }}/{{ repo_bareos_version }}"
+    repo_bareos_release: "{{ __repo_bareos_release }}/{{ repo_bareos_version }}"
   when: repo_bareos_release is not defined
 
 - name: Include tasks for Debian family
