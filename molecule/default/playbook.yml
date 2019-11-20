@@ -1,5 +1,7 @@
 ---
 - name: Converge
   hosts: all
+  user: ansible
+
   roles:
     - role: jj0cker.repo_bareos
