@@ -17,6 +17,6 @@
       deb
       http://download.bareos.org/bareos/{{ repo_bareos_release }}/{{ ansible_distribution }}_{{ repo_bareos_os_ver }}.0
       /
-    filename: bareos
+    filename: "{{ repo_bareos_filename }}"
     state: present
   become: true

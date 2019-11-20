@@ -10,6 +10,6 @@
     gpgkey:
       - http://download.bareos.org/bareos/{{ repo_bareos_release }}/{{ repo_bareos_distro }}_{{ repo_bareos_os_ver }}/repodata/repomd.xml.key
     gpgcheck: "{{ repo_bareos_gpgcheck }}"
-    file: bareos
+    file: "{{ repo_bareos_filename }}"
     state: present
   become: true
