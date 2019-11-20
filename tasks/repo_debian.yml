@@ -6,11 +6,11 @@
 
 - name: Add apt key for bareos repository
   apt_key:
-    url: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.0/Release.key
+    url: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ ansible_distribution }}_{{ repo_bareos_os_ver }}.0/Release.key
     state: present
 
 - name: Add official bareos repo (from bareos.org)
   apt_repository:
-    repo: deb http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.0 /
+    repo: deb http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ ansible_distribution }}_{{ repo_bareos_os_ver }}.0 /
     filename: bareos
     state: present
