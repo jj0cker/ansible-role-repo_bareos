@@ -28,6 +28,11 @@ Example Playbook
       roles:
          - { role: j0cker.bareos_repo }
 
+TODO
+----
+
+Add Ubuntu and maybe Fedora.
+
 License
 -------
 
