@@ -11,3 +11,4 @@
     gpgcheck: "{{ repo_bareos_gpgcheck }}"
     file: bareos
     state: present
+  become: true
