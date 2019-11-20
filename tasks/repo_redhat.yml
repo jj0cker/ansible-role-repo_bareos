@@ -3,9 +3,11 @@
   yum_repository:
     name: bareos_bareos-{{ repo_bareos_version }}
     description: bareos:bareos-{{ repo_bareos_version }} ({{ ansible_distribution }}_{{ repo_bareos_os_ver }})
-    baseurl: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ repo_bareos_distro }}_{{ repo_bareos_os_ver }}/
+    baseurl:
+      - http://download.bareos.org/bareos/{{ repo_bareos_release }}/{{ repo_bareos_distro }}_{{ repo_bareos_os_ver }}/
     enabled: "{{ repo_bareos_enabled }}"
-    gpgkey: http://download.bareos.org/bareos/release/{{ repo_bareos_version }}/{{ repo_bareos_distro }}_{{ repo_bareos_os_ver }}/repodata/repomd.xml.key
+    gpgkey:
+      - http://download.bareos.org/bareos/{{ repo_bareos_release }}/{{ repo_bareos_distro }}_{{ repo_bareos_os_ver }}/repodata/repomd.xml.key
     gpgcheck: "{{ repo_bareos_gpgcheck }}"
     file: bareos
     state: present
