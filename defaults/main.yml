@@ -1,2 +1,5 @@
 ---
-# defaults file for j0cker.bareos_repo
+repo_bareos_version: 18.2
+repo_bareos_enabled: true
+repo_bareos_gpgcheck: true
+repo_bareos_filename: bareos

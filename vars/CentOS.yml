@@ -1,0 +1,3 @@
+---
+repo_bareos_distro: "{{ ansible_distribution }}"
+__repo_bareos_release: release

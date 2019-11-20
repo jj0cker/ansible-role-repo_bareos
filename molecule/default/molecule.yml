@@ -5,21 +5,23 @@ driver:
   name: docker
 lint:
   name: yamllint
+  options:
+    config-file: molecule/default/yaml-lint.yml
 platforms:
-  - name: centos7
-    image: geerlingguy/docker-centos7-ansible:latest
-    #image: molecule_local/centos:
+  - name: instance
+    image: "jj0cker/docker-${MOLECULE_DISTRIBUTION:-centos7}-ansible:latest"
     command: ""
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    #  - /sys/fs/selinux:/sys/fs/selinux:ro
-    #pre_build_image: true
+      - /sys/fs/selinux:/sys/fs/selinux:ro
     privileged: true
+    pre_build_image: true
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
-  log: True
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
 verifier:
   name: testinfra
   lint:
