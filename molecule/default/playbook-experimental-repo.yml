@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  user: ansible
+  vars:
+    repo_bareos_release: experimental/nightly
+    repo_bareos_enabled: false
+  roles:
+    - role: jj0cker.repo_bareos
