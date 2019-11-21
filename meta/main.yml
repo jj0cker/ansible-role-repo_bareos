@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: jj0cker.repo_bareos
+  role_name: repo_bareos
   author: jj0cker
   description: Bareos repository.
   license: "license (BSD, MIT)"
