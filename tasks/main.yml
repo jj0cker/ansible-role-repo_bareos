@@ -1,8 +1,8 @@
 ---
 - name: Include variables for RedHat family
-  include_vars: "{{ ansible_distribution }}.yml"
+  include_vars: "{{ ansible_distribution | lower }}.yml"
 
-- name: Set repo_bareos_os_ver
+- name: Set variables repo_bareos_os_ver
   set_fact:
     repo_bareos_os_ver: "{{ ansible_distribution_major_version }}"
 
@@ -11,10 +11,5 @@
     repo_bareos_release: "{{ __repo_bareos_release }}/{{ repo_bareos_version }}"
   when: repo_bareos_release is not defined
 
-- name: Include tasks for Debian family
-  import_tasks: repo_debian.yml
-  when: ansible_distribution == "Debian"
-
-- name: Include tasks for RHEL family
-  import_tasks: repo_redhat.yml
-  when: ansible_os_family == "RedHat"
+- name: Include tasks for {{ ansible_os_family }} family
+  include_tasks: repo_{{ ansible_os_family | lower }}.yml
