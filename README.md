@@ -44,7 +44,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: j0cker.bareos_repo }
+         - { role: jj0cker.bareos_repo }
 
 TODO
 ----
