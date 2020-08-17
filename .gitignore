@@ -1,2 +1,2 @@
-.yamllint
 molecule/default/tests/__pycache__/*
+.vscode
